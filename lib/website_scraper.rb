@@ -8,8 +8,6 @@ page2 = agent.get "https://osu.edu"
 
 puts page.title
 puts page2.title
-puts page.uri
-
 
 =begin
 class WebsiteScraper

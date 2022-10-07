@@ -168,3 +168,4 @@ $RECYCLE.BIN/
 
 /.idea/
 .gitignore
+Gemfile.lock
