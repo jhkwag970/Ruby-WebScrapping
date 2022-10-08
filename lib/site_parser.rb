@@ -1,2 +1,3 @@
+
 class SiteParser
 end
