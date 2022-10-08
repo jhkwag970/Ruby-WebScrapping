@@ -16,6 +16,7 @@ class WebsiteScraper
         page = agent.get "https://news.osu.edu/?h=1&t=News,Research%20News"
 
         allNews = page.search('.pp_bigheadlines_data')
+        @site_parser.parse_news_html(allNews)
     end
 
 end
