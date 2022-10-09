@@ -10,7 +10,8 @@ puts "Please enter the way you would like the articles to be sorted.
       \n1.) Enter \"title\" for sorting each entry by title in alphabetical order
       \n2.) Enter \"rev title\" for sorting each entry by title in reverse alphabetical order
       \n3.) Enter \"date\" for sorting each entry by date
-      \n4.) Enter \"link\" for sorting each entry by link:\n"
+      \n4.) Enter \"link\" for sorting each entry by link
+      \n5.) Enter title of article to find the specific article\n"
 
 answer = gets.chomp
 
@@ -22,4 +23,11 @@ elsif answer == "date"
   puts ws.content_searcher.sort_by_date_posted ws.site_parser.parsed_data
 elsif answer == "link"
   puts ws.content_searcher.sort_by_link ws.site_parser.parsed_data
+else
+  article = ws.content_searcher.find_title ws.site_parser.parsed_data, answer
+  if article.length == 0
+    puts "No article Found"
+  else
+    puts article
+  end
 end
