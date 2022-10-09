@@ -1,13 +1,16 @@
-# project3-group8
+# project3-group8 Webscraping
 
-Scrapping OSU NEWS website
+## Project Description
 
-https://news.osu.edu/?h=1&t=News,Research%20News"
+Scrapping OSU NEWS website:
 
-In this project, we are scrapping three elements: title, date, and link from the list of the articles
+https://news.osu.edu/?h=1&t=News,Research%20News
+
+In this project, we are scrapping three elements: title, date, and link from the list of the articles.
 
 Then, from the console, the user can list the articles based on title in alphabetical order or reverse alphabetical order, based on link in alphabetical order, or by date from oldest to newest article.
 
+## Installation Instructions and How to Run the Program
 <ol>
     <li>Clone the project</li>
     <li>Run the command 'bundle install' in a terminal in the project3-group8 directory to install the gems necessary</li>
