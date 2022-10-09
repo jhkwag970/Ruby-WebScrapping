@@ -4,7 +4,7 @@ def sort_by_name_alphabetical(listOfJobs)
     listOfJobs[:job].sort
 end
 
-def sort_by_name_anti_alphibetical(listOfJobsGiven)
+def sort_by_name_anti_alphabetical(listOfJobsGiven)
     listOfJobsGiven[:job].sort{|a, b| b <=> a}
 end
 
