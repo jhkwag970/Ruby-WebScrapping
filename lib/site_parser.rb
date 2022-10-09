@@ -8,7 +8,7 @@ class SiteParser
         news.each do |article|
             article_date = article.search('.pp_date_month').text.strip + "/" + article.search('.pp_date_day').text.strip + "/" + article.search('.pp_date_year').text.strip
             article_title = article.search('.text_latestnews_more').text
-            article_link = article.search('.text_latestnews_more')[0]['href']
+            article_link = "https:"+article.search('.text_latestnews_more')[0]['href']
             @parsed_data.append(article_hash(article_date, article_title,article_link))
         end
     end

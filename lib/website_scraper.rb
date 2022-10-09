@@ -11,12 +11,15 @@ class WebsiteScraper
         @content_searcher = ContentSearcher.new
     end
 
-    def start
+    def scrap
         agent = Mechanize.new
         page = agent.get "https://news.osu.edu/?h=1&t=News,Research%20News"
 
         allNews = page.search('.pp_bigheadlines_data')
-        @site_parser.parse_news_html(allNews)
+    end
+
+    def start
+        @site_parser.parse_news_html(scrap)
     end
 
 end
