@@ -16,13 +16,25 @@ puts "Please enter the way you would like the articles to be sorted.
 answer = gets.chomp
 
 if answer == "title"
-  puts ws.content_searcher.sort_by_title ws.site_parser.parsed_data
+  ws.content_searcher.sort_by_title ws.site_parser.parsed_data
+  ws.site_parser.parsed_data.each do |article|
+    puts "Date: #{article[:date]}          Title: #{article[:title]}          Link: #{article[:link]}"
+  end 
 elsif answer == "rev title"
-  puts ws.content_searcher.sort_by_title_reverse ws.site_parser.parsed_data
+  ws.content_searcher.sort_by_title_reverse ws.site_parser.parsed_data
+  ws.site_parser.parsed_data.each do |article|
+    puts "Date: #{article[:date]}          Title: #{article[:title]}          Link: #{article[:link]}"
+  end 
 elsif answer == "date"
-  puts ws.content_searcher.sort_by_date_posted ws.site_parser.parsed_data
+  ws.content_searcher.sort_by_date_posted ws.site_parser.parsed_data
+  ws.site_parser.parsed_data.each do |article|
+    puts "Date: #{article[:date]}          Title: #{article[:title]}          Link: #{article[:link]}"
+  end 
 elsif answer == "link"
   puts ws.content_searcher.sort_by_link ws.site_parser.parsed_data
+  ws.site_parser.parsed_data.each do |article|
+    puts "Date: #{article[:date]}          Title: #{article[:title]}          Link: #{article[:link]}"
+  end 
 else
   article = ws.content_searcher.find_title ws.site_parser.parsed_data, answer
   if article.length == 0
