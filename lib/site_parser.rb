@@ -21,6 +21,24 @@ class SiteParser
         p @parsed_data
     end
 
+    def print_title
+        @parsed_data.each do |article|
+            p article[:title]
+        end
+    end
+
+    def print_link
+        @parsed_data.each do |article|
+            p article[:link]
+        end
+    end
+
+    def print_date
+        @parsed_data.each do |article|
+            p article[:date]
+        end
+    end
+
     def news_number
         @parsed_data.length
     end
