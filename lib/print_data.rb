@@ -19,7 +19,7 @@ end
 
 p tmp
 
-
+p news
 
 =begin
 date = news[0].search('.pp_date_day').text.strip

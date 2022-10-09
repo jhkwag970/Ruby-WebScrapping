@@ -4,7 +4,8 @@ require "mechanize"
 
 
 class WebsiteScraper
-
+    attr_reader :site_parser
+    attr_reader :content_searcher
     def initialize
         @site_parser = SiteParser.new
 

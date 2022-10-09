@@ -38,8 +38,19 @@ def sort_by_location(listOfLocations, locations)
     listOfLocations
 end
 
-def sort_by_date_posted(listOfDates)
-    listOfDates.sort_by[:date]{|d| m,d,y=d.split("/");[y,m,d]}
+def sort_help(h)
+    hash = { January: "01", February: "02", March: "03", April: "04", May: "05", June: "06",
+             July: "07", August: "08", September: "09", October: "10", November: "11", December: "12"}
+    m,d,y=h[:date].split("/")
+    "#{y}-#{hash[m.to_sym]}-#{d}"
 end
 
+def sort_by_date_posted(listOfDates)
+    listOfDates.sort_by {|h| sort_help(h)}
+    #listOfDates.map { |hash|  {date: hash[:date], title: hash[:title], link: hash[:link]}}
+end
+
+def sort_by_link(listOfLinks)
+    listOfLinks.sort_by{|hash| hash[:link]}
+end
 end
