@@ -1,5 +1,23 @@
 class ContentSearcher
 
+
+def sort_by_title(parsed_data)
+    parsed_data.sort_by!{|hsh| hsh[:title]}
+end
+
+def sort_by_title_reverse(parsed_data)
+    parsed_data.sort_by!{|hsh| hsh[:title]}.reverse!
+end
+
+def find_title(parsed_data, title)
+    article = Hash.new
+    parsed_data.each do |item|
+        if item[:title] == title
+            article = item.clone
+        end
+    end
+    article
+end
 def sort_by_name_alphabetical(listOfJobs)
     listOfJobs[:job].sort
 end

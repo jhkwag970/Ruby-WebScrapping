@@ -2,29 +2,27 @@ require_relative './site_parser'
 require_relative './content_searcher'
 require "mechanize"
 
-agent = Mechanize.new
-page = agent.get "https://osu.wd1.myworkdayjobs.com/OSUCareers"
-page2 = agent.get "https://osu.edu"
 
-puts page.title
-puts page2.title
-
-=begin
 class WebsiteScraper
 
     def initialize
         @site_parser = SiteParser.new
+
         @content_searcher = ContentSearcher.new
     end
 
-    def start
-        doc = Nokogiri::HTML4(URI.open("https://osu.wd1.myworkdayjobs.com/OSUCareers"))
+    def scrap
+        agent = Mechanize.new
+        page = agent.get "https://news.osu.edu/?h=1&t=News,Research%20News"
 
-        description = doc.css("div").text
+        allNews = page.search('.pp_bigheadlines_data')
+    end
+
+    def start
+        @site_parser.parse_news_html(scrap)
     end
 
 end
-=end
 
 
 
