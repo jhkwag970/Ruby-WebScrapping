@@ -14,7 +14,7 @@ puts "Please enter the way you would like the articles to be sorted.
       \n5.) Enter title of article to find the specific article\n"
 
 answer = gets.chomp
-
+# Process and print article data based on user entered command.
 if answer == "title"
   ws.content_searcher.sort_by_title ws.site_parser.parsed_data
   ws.site_parser.parsed_data.each do |article|
@@ -31,7 +31,7 @@ elsif answer == "date"
     puts "Date: #{article[:date]}          Title: #{article[:title]}          Link: #{article[:link]}"
   end 
 elsif answer == "link"
-  puts ws.content_searcher.sort_by_link ws.site_parser.parsed_data
+  ws.content_searcher.sort_by_link ws.site_parser.parsed_data
   ws.site_parser.parsed_data.each do |article|
     puts "Date: #{article[:date]}          Title: #{article[:title]}          Link: #{article[:link]}"
   end 
@@ -40,6 +40,6 @@ else
   if article.length == 0
     puts "No article Found"
   else
-    puts article
+    puts "Date: #{article[:date]}          Title: #{article[:title]}          Link: #{article[:link]}"
   end
 end
